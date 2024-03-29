@@ -1,0 +1,1 @@
+# rpmbuild-local-fail2ban-selinux
