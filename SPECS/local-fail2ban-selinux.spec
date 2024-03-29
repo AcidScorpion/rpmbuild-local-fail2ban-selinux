@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:		local-fail2ban-selinux
-Version:	1.0.0
-Release:	1%{?dist}
+Version:	1.0.1
+Release:	2%{?dist}
 Summary:	Local SELinux fail2ban module 
 
 License:	GPL	
@@ -47,5 +47,10 @@ fi
 semodule -r local-fail2ban
 
 %changelog
+* Fri Mar 29 2024 Acid_Scorpion <dmitry@petrich.me>
+- Version: 1.0.1
+  (typeattributeset cil_gen_require hostname_exec_t)
+  (allow fail2ban_t hostname_exec_t (file (getattr read execute open execute_no_trans map)))
+
 * Fri Mar 29 2024 Acid_Scorpion <dmitry@petrich.me>
 - Initial build
